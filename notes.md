@@ -1,9 +1,9 @@
 **Class Components**
 
-[React.Component](https://reactjs.org/docs/react-component.html)
-[React Functional Components vs. Class Components](https://www.andreasreiterer.at/react-functional-components/)
-[SyntheticEvent](https://reactjs.org/docs/events.html)
-[Handling Events](https://reactjs.org/docs/handling-events.html)
+* [React.Component](https://reactjs.org/docs/react-component.html)
+* [React Functional Components vs. Class Components](https://www.andreasreiterer.at/react-functional-components/)
+* [SyntheticEvent](https://reactjs.org/docs/events.html)
+* [Handling Events](https://reactjs.org/docs/handling-events.html)
 
 
 * Class Components in React are the same as class componens in JS Classes
