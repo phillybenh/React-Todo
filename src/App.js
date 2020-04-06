@@ -6,16 +6,7 @@ import ToDoForm from "./components/ToDoForm";
 import "./components/ToDo.css";
 
 const list = [
-  {
-    task: "Organize Garage",
-    id: 1528817077286,
-    completed: false,
-  },
-  {
-    task: "Bake Cookies",
-    id: 1528817084358,
-    completed: false,
-  },
+  
 ];
 
 class App extends React.Component {
@@ -55,6 +46,13 @@ class App extends React.Component {
       })
     })
   }
+
+  clearCompleted = event => {
+    event.preventDefault()
+    this.setState({
+      list: this.state.list.filter(item => !item.completed)
+    })
+  }
   
 
   render() {
@@ -63,7 +61,9 @@ class App extends React.Component {
         <ToDoList 
         list={this.state.list}
         taskCompleted={this.taskCompleted} />
-        <ToDoForm addTask={this.addTask} />
+        <ToDoForm 
+          addTask={this.addTask}
+          clearCompleted={this.clearCompleted} />
       </div>
     );
   }
