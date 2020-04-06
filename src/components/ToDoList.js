@@ -8,17 +8,17 @@ const ToDoList = (props) => {
     <div>
       {console.log(props)}
       <h1>To Do List</h1>
-      <ul>
+      {/* <ul> */}
         {props.list.map((item) => (
           //   console.log(item)
-          <ToDo 
-          key={item.id} 
-          task={item.task} 
-          completed={item.completed} 
+          <ToDo
+            key={item.id}
+            id={item.id}
+            task={item.task}
+            taskCompleted={props.taskCompleted}
           />
         ))}
-      </ul>
-      
+      {/* </ul> */}
     </div>
   );
 };

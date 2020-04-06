@@ -1,10 +1,12 @@
 import React from 'react';
 
-const ToDo = props=> {
+const ToDo = props => {
+    
     return (
-        <li>
-            {props.task}
-        </li>
+      <div>
+        <input type="checkbox" onClick={() => props.taskCompleted(props.id)}/>
+        {props.task}
+      </div>
     );
 };
 
