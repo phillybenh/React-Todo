@@ -1,5 +1,7 @@
 import React from "react";
 import ToDoList from "./components/ToDoList";
+import ToDoForm from "./components/ToDoForm";
+
 
 import "./components/ToDo.css";
 
@@ -28,10 +30,25 @@ class App extends React.Component {
     }
   }
 
+  addTask = (event, task) => {
+    event.preventDefault();
+    const newTask = {
+      task: task,
+      id: Date.now(),
+      completed: false
+    }
+    this.setState({
+      list: [...this.state.list, newTask]
+    })
+  }
+
+  
+
   render() {
     return (
       <div>
-        <ToDoList list={this.state.list}/>
+        <ToDoList list={this.state.list} />
+        <ToDoForm addTask={this.addTask} />
       </div>
     );
   }

@@ -9,12 +9,31 @@ class ToDoForm extends React.Component {
         }
     }
 
+    handleChanges = event => {
+        this.setState({ [event.target.name]: event.target.value });
+    }
+
+    submitTask = event => {
+        event.preventDefault();
+        this.setState({ task: '' });
+        this.props.addTask(event, this.state.task);
+    }
+
     render() {
         return (
-            <form onSubmit="dummy">
-                <input type="text" value={this.state.task} name="task" onChange="dummy"/>
-                <button>Add</button>
+            <div>
+                <form onSubmit={this.submitTask}>
+                {/* {console.log(this.props.addTask)} */}
+                <input 
+                    type="text" 
+                    value={this.state.task} 
+                    name="task" 
+                    onChange={this.handleChanges}/>
+                <button>Add Task</button>
             </form>
+            <button>Clear Completed</button>
+            </div>
+
             
         )
     }

@@ -2,7 +2,6 @@
 // feel free to change this component.js into TodoList.js
 import React from "react";
 import ToDo from "./ToDo";
-import ToDoForm from "./ToDoForm";
 
 const ToDoList = (props) => {
   return (
@@ -19,7 +18,7 @@ const ToDoList = (props) => {
           />
         ))}
       </ul>
-      <ToDoForm />
+      
     </div>
   );
 };
