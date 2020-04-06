@@ -5,10 +5,10 @@ import ToDo from "./ToDo";
 
 const ToDoList = (props) => {
   return (
-    <div>
-      {console.log(props)}
-      <h1>To Do List</h1>
-      {/* <ul> */}
+    <div class="wrapper">
+      {/* {console.log(props)} */}
+      <h1>To Do List:</h1>
+      <div class="list">
         {props.list.map((item) => (
           //   console.log(item)
           <ToDo
@@ -18,7 +18,7 @@ const ToDoList = (props) => {
             taskCompleted={props.taskCompleted}
           />
         ))}
-      {/* </ul> */}
+      </div>
     </div>
   );
 };

@@ -1,43 +1,43 @@
-import React from 'react';
+import React from "react";
 
 class ToDoForm extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      task: "",
+    };
+  }
 
-    constructor() {
-        super();
-        this.state = {
-            task: ''
-        }
-    }
+  handleChanges = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-    handleChanges = event => {
-        this.setState({ [event.target.name]: event.target.value });
-    }
+  submitTask = (event) => {
+    event.preventDefault();
+    this.setState({ task: "" });
+    this.props.addTask(event, this.state.task);
+  };
 
-    submitTask = event => {
-        event.preventDefault();
-        this.setState({ task: '' });
-        this.props.addTask(event, this.state.task);
-    }
-
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.submitTask}>
-                {/* {console.log(this.props.addTask)} */}
-                <input 
-                    type="text" 
-                    value={this.state.task} 
-                    name="task" 
-                    onChange={this.handleChanges}/>
-                <button>Add Task</button>
-            </form>
-            <button onClick={this.props.clearCompleted}>Clear Completed</button>
-            </div>
-
-            
-        )
-    }
-
+  render() {
+    return (
+      <div class="ToDoForm">
+        <form onSubmit={this.submitTask} class="form">
+          {/* {console.log(this.props.addTask)} */}
+          <input
+            type="text"
+            value={this.state.task}
+            name="task"
+            onChange={this.handleChanges}
+            class="input"
+          />
+          <button class="addBTN">Add Task</button>
+        </form>
+        <button class="clearBTN" onClick={this.props.clearCompleted}>
+          Clear Completed
+        </button>
+      </div>
+    );
+  }
 }
 
 export default ToDoForm;
